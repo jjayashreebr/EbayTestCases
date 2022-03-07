@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="13626" started-at="2022-03-07T12:25:55 PST" finished-at="2022-03-07T12:26:09 PST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="13626" started-at="2022-03-07T12:25:55 PST" finished-at="2022-03-07T12:26:09 PST">
+      <class name="com.qa.ebay.EbayAutomation.EbayTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.ebay.EbayAutomation.EbayTest@8646db9]" name="setUp" is-config="true" duration-ms="8" started-at="2022-03-07T12:25:55 PST" finished-at="2022-03-07T12:25:55 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAdvertisement()[pri:0, instance:com.qa.ebay.EbayAutomation.EbayTest@8646db9]" name="verifyAdvertisement" duration-ms="12213" started-at="2022-03-07T12:25:55 PST" finished-at="2022-03-07T12:26:07 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAdvertisement -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.ebay.EbayAutomation.EbayTest@8646db9]" name="tearDown" is-config="true" duration-ms="1313" started-at="2022-03-07T12:26:07 PST" finished-at="2022-03-07T12:26:09 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.ebay.EbayAutomation.EbayTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
