@@ -1,10 +1,14 @@
 package com.qa.ebay.EbayAutomation;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -71,7 +75,6 @@ public class EbayTest
     	driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.ebay.com/");
-		
 		driver.findElement(By.id("gh-shop-a")).click();
 		WebElement rootTag = driver.findElement(By.xpath("//table[@id='gh-sbc'] //td[1] "));
 		String categoryName = rootTag.findElement(By.xpath("//h3/a")).getText();
@@ -80,6 +83,63 @@ public class EbayTest
 		System.out.println(size);
     }
     
+    
+    @Test
+    public void getSubCategory() {
+    	driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.ebay.com/");
+		
+		driver.findElement(By.id("gh-shop-a")).click();
+         
+        List<WebElement> tdElements = driver.findElements(By.cssSelector("#gh-sbc td"));
+      outer:
+        for (int i = 1; i <= tdElements.size(); i++) {
+         String xpathEx="//td["+i+"]";
+         List<WebElement> h3Elements = tdElements.get(i).findElements(By.cssSelector("h3")); 
+           
+            System.out.println("h3 count"+h3Elements.size());
+            for(int j = 1; j <= h3Elements.size(); j++) {
+            	xpathEx=xpathEx+"/h3["+j+"]";
+            	WebElement h3Element = h3Elements.get(j);
+            	List<WebElement> aElements =h3Element.findElements(By.cssSelector("a"));
+            	//System.out.println(aElements.size());
+            	//xpathEx=xpathEx+"/a/parent::h3/following-sibling::ul[1]/li";
+            	System.out.println(xpathEx+"/a/parent::h3/following-sibling::ul[1]/li");
+            	List<WebElement> subElements 
+            	=driver.findElements(By.xpath(xpathEx+"/a/parent::h3/following-sibling::ul[1]/li"));
+            	System.out.println("********"+subElements.size());
+            	//td[1]/h3[3]/a/parent::h3/following-sibling::ul[1]/li
+            	
+                }
+      
+        }
+       // return map;
+    }
+    
+    @Test
+    public void HomePageScroll() {
+    	driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.ebay.com/");
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,400)");
+        int size=driver
+        .findElements(By.xpath("//*[@id=\"s0-0-32-4-0-0[2]-4-match-media-0-ebay-carousel-list\"]/li"))
+        .size();
+      Assert.assertTrue(size>=0);
+    }
+
+    @Test
+    public void DailyDealsLink() {
+    	driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.ebay.com/");
+		driver.findElement(By.cssSelector("#gh-p-1 a")).click();
+		boolean flag=driver.findElement(By.cssSelector(".ebayui-dne-item-featured-card")).isDisplayed();
+        Assert.assertTrue(flag);
+    
+    }
     
     @Test
     public void verifyAdvertisement() {
