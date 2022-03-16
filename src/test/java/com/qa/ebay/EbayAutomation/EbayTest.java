@@ -1,10 +1,7 @@
 package com.qa.ebay.EbayAutomation;
 
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
@@ -15,14 +12,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 /**
  * Unit test for simple App.
  */
-public class EbayTest 
+public class EbayTest
 {
     /**
      * Rigorous Test :-)
@@ -34,9 +30,9 @@ public class EbayTest
     	String driverpath = System.getProperty("user.dir") + "/chromedriver.exe";
     	System.out.println(driverpath);
 		System.setProperty("webdriver.chrome.driver", driverpath);
-       
+
     }
-    
+
     @Test
     public void verifyEbayCategory() {
     	driver = new ChromeDriver();
@@ -44,8 +40,8 @@ public class EbayTest
 		driver.get("https://www.ebay.com/");
 		driver.findElement(By.id("gh-shop-a")).click();
 		List<WebElement> myList = driver.findElements(By.cssSelector("#gh-sbc h3 a"));
-		List<String> myProductList=myList.stream().map(s->(s.getText())).collect(Collectors.toList());
-	
+		List<Object> myProductList=myList.stream().map(s->(s.getText())).collect(Collectors.toList());
+
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertTrue(myProductList.contains("Motors"));
 		softAssert.assertTrue(myProductList.contains("Clothing & Accessories"));
@@ -53,8 +49,8 @@ public class EbayTest
 		softAssert.assertTrue(myProductList.contains("Electronics"));
 		softAssert.assertAll();
     }
-    
-    
+
+
     @Test
     public void verifyEbaySearch() {
     	driver = new ChromeDriver();
@@ -69,7 +65,7 @@ public class EbayTest
 	    System.out.println(productName);
 	    Assert.assertTrue(productName.contains("iPhone"));
     }
-    
+
     @Test
     public void verifySubCategoryUnderMainCategory() {
     	driver = new ChromeDriver();
@@ -82,22 +78,22 @@ public class EbayTest
 		int size = rootTag.findElements(By.xpath("//ul[1]/li")).size();
 		System.out.println(size);
     }
-    
-    
+
+
     @Test
     public void getSubCategory() {
     	driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.ebay.com/");
-		
+
 		driver.findElement(By.id("gh-shop-a")).click();
-         
+
         List<WebElement> tdElements = driver.findElements(By.cssSelector("#gh-sbc td"));
       outer:
         for (int i = 1; i <= tdElements.size(); i++) {
          String xpathEx="//td["+i+"]";
-         List<WebElement> h3Elements = tdElements.get(i).findElements(By.cssSelector("h3")); 
-           
+         List<WebElement> h3Elements = tdElements.get(i).findElements(By.cssSelector("h3"));
+
             System.out.println("h3 count"+h3Elements.size());
             for(int j = 1; j <= h3Elements.size(); j++) {
             	xpathEx=xpathEx+"/h3["+j+"]";
@@ -106,17 +102,17 @@ public class EbayTest
             	//System.out.println(aElements.size());
             	//xpathEx=xpathEx+"/a/parent::h3/following-sibling::ul[1]/li";
             	System.out.println(xpathEx+"/a/parent::h3/following-sibling::ul[1]/li");
-            	List<WebElement> subElements 
+            	List<WebElement> subElements
             	=driver.findElements(By.xpath(xpathEx+"/a/parent::h3/following-sibling::ul[1]/li"));
             	System.out.println("********"+subElements.size());
             	//td[1]/h3[3]/a/parent::h3/following-sibling::ul[1]/li
-            	
+
                 }
-      
+
         }
        // return map;
     }
-    
+
     @Test
     public void HomePageScroll() {
     	driver = new ChromeDriver();
@@ -138,9 +134,9 @@ public class EbayTest
 		driver.findElement(By.cssSelector("#gh-p-1 a")).click();
 		boolean flag=driver.findElement(By.cssSelector(".ebayui-dne-item-featured-card")).isDisplayed();
         Assert.assertTrue(flag);
-    
+
     }
-    
+
     @Test
     public void verifyAdvertisement() {
     	driver = new ChromeDriver();
@@ -152,7 +148,7 @@ public class EbayTest
 		myList.stream().forEach(s->System.out.println(s.getText()));
 		Assert.assertTrue(myList.size()>0);
     }
-    
+
     @AfterMethod
     public void tearDown() {
     	if(driver!=null) {

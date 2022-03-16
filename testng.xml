@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+	<test thread-count="5" name="TestUS">
+	<parameter name="site" value="us"></parameter>
+		<classes>
+			<class name="com.qa.ebay.EbayAutomation.EbayPageTest" />
+		</classes>
+	</test>
+	
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.qa.ebay.EbayAutomation.EbayTest" />
+			<class name="com.qa.ebay.EbayAutomation.EbayBackEndTest" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Testde">
+		<parameter name="site" value="de"></parameter>
+		<classes>
+		<class name="com.qa.ebay.EbayAutomation.EbayPageTest" />
+        </classes>
+	</test>
+
+</suite> <!-- Suite -->

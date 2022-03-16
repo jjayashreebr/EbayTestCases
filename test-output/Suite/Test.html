@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Default test</title>
+<title>TestNG:  Test</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Default test</h2><table border='1' align="center">
+<h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Mar 15 16:46:45 PDT 2022</td>
+<td>Started on:</td><td>Tue Mar 15 18:17:59 PDT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>16 seconds (16504 ms)</td>
+<tr><td>Total time:</td><td>60 seconds (60111 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,44 +75,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.qa.ebay.EbayAutomation.EbayPageTest.testVerifyPageTitleUsingTestngParameter()'><b>testVerifyPageTitleUsingTestngParameter</b><br>Test class: com.qa.ebay.EbayAutomation.EbayPageTest</td>
-<td><div><pre>java.lang.AssertionError: expected:&lt;Elektronik, Autos, Mode, Sammlerstücke, Möbel und mehr Online-Shopping | eBay&gt; but was:&lt;Electronics, Cars, Fashion, Collectibles &amp; More | eBay&gt;
-	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:115)
-	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:125)
-	at com.qa.ebay.EbayAutomation.EbayPageTest.testVerifyPageTitleUsingTestngParameter(EbayPageTest.java:28)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+<td title='com.qa.ebay.EbayAutomation.EbayBackEndTest.testcase1()'><b>testcase1</b><br>Test class: com.qa.ebay.EbayAutomation.EbayBackEndTest</td>
+<td><div><pre>java.lang.AssertionError: expected [200 OK] but found [301 MOVED_PERMANENTLY]
+	at com.qa.ebay.EbayAutomation.EbayBackEndTest.testcase1(EbayBackEndTest.java:59)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.runSuites(TestNG.java:1092)
-	at org.testng.TestNG.run(TestNG.java:1060)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace855724043", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace855724043'><pre>java.lang.AssertionError: expected:&lt;Elektronik, Autos, Mode, Sammlerstücke, Möbel und mehr Online-Shopping | eBay&gt; but was:&lt;Electronics, Cars, Fashion, Collectibles &amp; More | eBay&gt;
-	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:115)
-	at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:125)
-	at com.qa.ebay.EbayAutomation.EbayPageTest.testVerifyPageTitleUsingTestngParameter(EbayPageTest.java:28)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1139851985", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1139851985'><pre>java.lang.AssertionError: expected [200 OK] but found [301 MOVED_PERMANENTLY]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:643)
+	at com.qa.ebay.EbayAutomation.EbayBackEndTest.testcase1(EbayBackEndTest.java:59)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -142,8 +116,89 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>16</td>
-<td>com.qa.ebay.EbayAutomation.EbayPageTest@3ecd23d9</td></tr>
+<td>0</td>
+<td>com.qa.ebay.EbayAutomation.EbayBackEndTest@25084a1e</td></tr>
+<tr>
+<td title='com.qa.ebay.EbayAutomation.EbayTest.getSubCategory()'><b>getSubCategory</b><br>Test class: com.qa.ebay.EbayAutomation.EbayTest</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index: 3, Size: 3
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.qa.ebay.EbayAutomation.EbayTest.getSubCategory(EbayTest.java:100)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1618099562", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1618099562'><pre>java.lang.IndexOutOfBoundsException: Index: 3, Size: 3
+	at java.util.ArrayList.rangeCheck(ArrayList.java:657)
+	at java.util.ArrayList.get(ArrayList.java:433)
+	at com.qa.ebay.EbayAutomation.EbayTest.getSubCategory(EbayTest.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>6</td>
+<td>com.qa.ebay.EbayAutomation.EbayTest@6d3af739</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.qa.ebay.EbayAutomation.EbayTest.verifySubCategoryUnderMainCategory()'><b>verifySubCategoryUnderMainCategory</b><br>Test class: com.qa.ebay.EbayAutomation.EbayTest</td>
+<td></td>
+<td>6</td>
+<td>com.qa.ebay.EbayAutomation.EbayTest@6d3af739</td></tr>
+<tr>
+<td title='com.qa.ebay.EbayAutomation.EbayTest.HomePageScroll()'><b>HomePageScroll</b><br>Test class: com.qa.ebay.EbayAutomation.EbayTest</td>
+<td></td>
+<td>4</td>
+<td>com.qa.ebay.EbayAutomation.EbayTest@6d3af739</td></tr>
+<tr>
+<td title='com.qa.ebay.EbayAutomation.EbayTest.verifyAdvertisement()'><b>verifyAdvertisement</b><br>Test class: com.qa.ebay.EbayAutomation.EbayTest</td>
+<td></td>
+<td>4</td>
+<td>com.qa.ebay.EbayAutomation.EbayTest@6d3af739</td></tr>
+<tr>
+<td title='com.qa.ebay.EbayAutomation.EbayTest.verifyEbaySearch()'><b>verifyEbaySearch</b><br>Test class: com.qa.ebay.EbayAutomation.EbayTest</td>
+<td></td>
+<td>11</td>
+<td>com.qa.ebay.EbayAutomation.EbayTest@6d3af739</td></tr>
+<tr>
+<td title='com.qa.ebay.EbayAutomation.EbayTest.DailyDealsLink()'><b>DailyDealsLink</b><br>Test class: com.qa.ebay.EbayAutomation.EbayTest</td>
+<td></td>
+<td>9</td>
+<td>com.qa.ebay.EbayAutomation.EbayTest@6d3af739</td></tr>
+<tr>
+<td title='com.qa.ebay.EbayAutomation.EbayTest.verifyEbayCategory()'><b>verifyEbayCategory</b><br>Test class: com.qa.ebay.EbayAutomation.EbayTest</td>
+<td></td>
+<td>7</td>
+<td>com.qa.ebay.EbayAutomation.EbayTest@6d3af739</td></tr>
 </table><p>
 </body>
 </html>
